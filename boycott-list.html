@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoycottPalestine.org - Boycott List</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            overflow-x: hidden; /* Prevent horizontal scrollbars */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #0061a7; /* Light Blue */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #0083cc; /* Slightly Darker Blue */
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            flex: 1;
+            position: relative;
+            text-align: center;
+        }
+
+        .overlay-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+            padding: 20px;
+            border-radius: 10px;
+            color: #0061a7; /* Light Blue */
+        }
+
+        footer {
+            background-color: #0061a7; /* Light Blue */
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .boycott-list-content,
+        .inventions-content {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .background-image {
+            position: relative;
+            background-image: url('https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?cs=srgb&dl=pexels-francesco-ungaro-281260.jpg&fm=jpg'); /* Replace with the path to your background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 50vh;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #00a2e8; /* Lighter Blue */
+        }
+
+        .home-link {
+            background-color: #0061a7; /* Light Blue */
+            border: 2px solid #0061a7; /* Light Blue */
+        }
+
+        .boycott-link.active .home-link,
+        .inventions-link.active .home-link {
+            background-color: #0083cc; /* Slightly Darker Blue */
+            border: 2px solid #0083cc; /* Slightly Darker Blue */
+        }
+
+        .home-link:hover {
+            background-color: #0083cc; /* Slightly Darker Blue */
+            border: 2px solid #0083cc; /* Slightly Darker Blue */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Your Website</h1>
+    </header>
+
+    <nav>
+        <a href="/" class="nav-link home-link">Home</a>
+        <a href="boycott-list" onclick="showContent('boycott-list-content')" class="nav-link boycott-link">Boycott List</a>
+        <a href="inventions" onclick="showContent('inventions-content')" class="nav-link inventions-link">Israeli Inventions</a>
+    </nav>
+
+    <section class="boycott-list-content background-image">
+        <div class="overlay-box">
+            <p>You really think there is something to boycott?</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Spoedel All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showContent(content) {
+            document.querySelectorAll('section').forEach((el) => {
+                el.classList.remove('active');
+            });
+
+            document.querySelectorAll('.nav-link').forEach((el) => {
+                el.classList.remove('active');
+            });
+
+            document.querySelector(`.${content}`).classList.add('active');
+            document.querySelector(`.${content}-link`).classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>
