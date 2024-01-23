@@ -114,9 +114,9 @@
     </header>
 
     <nav>
-        <a href="/" class="nav-link home-link">Home</a>
+        <a href="home" class="nav-link home-link">Home</a>
         <a href="boycott-list" onclick="showContent('boycott-list-content')" class="nav-link boycott-link">Boycott List</a>
-        <a href="inventions" onclick="showContent('inventions-content')" class="nav-link inventions-link">Israeli News</a>
+        <a href="israeli-news" onclick="showContent('israeli-news-content')" class="nav-link israeli-link">Israeli News</a>
     </nav>
 
     <section class="boycott-list-content background-image">
@@ -125,11 +125,19 @@
         </div>
     </section>
 
+    <!-- Add your other content sections as needed -->
+    <section class="inventions-content">
+        <div class="overlay-box">
+            <p>Israeli News Content Goes Here</p>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2024 Spoedel All rights reserved.</p>
     </footer>
 
     <script>
+        // Function to show content
         function showContent(content) {
             document.querySelectorAll('section').forEach((el) => {
                 el.classList.remove('active');
@@ -142,6 +150,11 @@
             document.querySelector(`.${content}`).classList.add('active');
             document.querySelector(`.${content}-link`).classList.add('active');
         }
+
+        // Call showContent for the home content on page load
+        window.onload = function () {
+            showContent('boycott-list-content');
+        };
     </script>
 
 </body>
